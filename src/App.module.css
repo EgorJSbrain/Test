@@ -1,0 +1,19 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 9fr 3fr;
+  width: 100vw;
+  height: 100vh;
+  
+}
+
+.buttons_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.modals_block {
+  /* border: 1px solid black; */
+  overflow: scroll;
+}
