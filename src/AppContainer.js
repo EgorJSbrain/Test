@@ -5,9 +5,9 @@ import { isOpen, isCloseTC } from './redux/buttonReducer';
 
 
 class AppContainer extends React.Component {
-    
-    render(){
-        return <App {...this.props}/>
+
+    render() {
+        return <App {...this.props} />
     }
 }
 
@@ -27,5 +27,5 @@ const mapDispatchToProps = (dispatch) => {
         }
     }
 }
-const ContainerApp = connect (mapStateToProps, mapDispatchToProps)(AppContainer)
+const ContainerApp = connect(mapStateToProps, mapDispatchToProps)(AppContainer)
 export default ContainerApp;

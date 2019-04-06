@@ -1,6 +1,5 @@
 import { idGenerator } from "../support/counter";
 
-// import { idGenerator } from "../support/counter";
 
 const IS_OPEN = 'IS_OPEN';
 const IS_CLOSE = 'IS_CLOSE';
@@ -15,7 +14,7 @@ const initialState = {
             title: 'SUCCESS',
             btnClass: 'button-success'
         },
-        { 
+        {
             id: 2,
             title: 'WARNING',
             btnClass: 'button-warning'
@@ -37,25 +36,17 @@ const buttonReducer = (state = initialState, action) => {
                 moduleClass: action.module.btnClass
 
             }
-            // debugger
-            console.log(newModule.moduleId, newModule.moduleId);
             return {
                 ...state,
                 modules: [...state.modules, newModule]
-                
-
             }
         }
         case IS_CLOSE: {
-        //  debugger
-        return {
-            ...state,
-            modules: [...state.modules.filter( m => {
-                
-                return m.moduleId !== action.moduleId
-            })]
+            return {
+                ...state,
+                modules: [...state.modules.filter(m => m.moduleId !== action.moduleId)]
+            }
         }
-    }
         default:
             return state
     }
@@ -64,7 +55,6 @@ export const isOpen = (module) => ({ type: IS_OPEN, module })
 export const isClose = (moduleId) => ({ type: IS_CLOSE, moduleId })
 
 export const isCloseTC = (moduleId) => (dispatch) => {
-    // debugger
     setTimeout(() => dispatch(isClose(moduleId)), 3000)
 }
 export default buttonReducer;
