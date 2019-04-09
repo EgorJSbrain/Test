@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import App from './App';
-import { isOpen, isCloseTC } from './redux/buttonReducer';
+import { isOpen, isCloseTC, buttonsSelector, modulesSelector } from './redux/buttonReducer';
 
 
 class AppContainer extends React.Component {
@@ -13,8 +13,8 @@ class AppContainer extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        buttons: state.reducer.buttons,
-        modules: state.reducer.modules
+        buttons: buttonsSelector(state),
+        modules: modulesSelector(state)
     }
 }
 const mapDispatchToProps = (dispatch) => {

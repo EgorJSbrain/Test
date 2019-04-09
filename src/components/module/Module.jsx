@@ -2,9 +2,9 @@ import React from 'react';
 import style from './Module.module.css'
 
 
-class Module extends React.Component  {
+class Module extends React.Component {
 
-  componentDidMount() {
+    componentDidMount() {
         this.props.isClose(this.props.module.moduleId)
     }
     render() {

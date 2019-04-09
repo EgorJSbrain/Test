@@ -6,13 +6,16 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 import buttonReducer from './redux/buttonReducer';
 import ContainerApp from './AppContainer';
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+
 
 let combinedReducers = combineReducers({
     reducer: buttonReducer
 });
 
-let store = createStore(combinedReducers, applyMiddleware(thunk));
+let store = createStore(combinedReducers, composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
     <Provider store={store}>

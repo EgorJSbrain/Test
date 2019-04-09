@@ -6,6 +6,7 @@ import Module from './components/module/Module';
 
 
 const App = (props) => { 
+  // debugger
   return (
     <div className={style.wrapper}>
       <div className={style.buttons_block}>

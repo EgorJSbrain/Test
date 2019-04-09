@@ -34,7 +34,6 @@ const buttonReducer = (state = initialState, action) => {
                 moduleId: idGenerator(),
                 title: action.module.title,
                 moduleClass: action.module.btnClass
-
             }
             return {
                 ...state,
@@ -56,5 +55,12 @@ export const isClose = (moduleId) => ({ type: IS_CLOSE, moduleId })
 
 export const isCloseTC = (moduleId) => (dispatch) => {
     setTimeout(() => dispatch(isClose(moduleId)), 3000)
+}
+
+export const buttonsSelector = (state) => {
+    return state.reducer.buttons
+}
+export const modulesSelector = (state) => {
+    return state.reducer.modules
 }
 export default buttonReducer;

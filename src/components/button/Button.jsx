@@ -13,7 +13,7 @@ class Button extends React.Component {
     }
     render() {
         return <div className={style[this.props.button.btnClass]}
-            onClick={() => this.addModule(this.props.button)}>
+                    onClick={() => this.addModule(this.props.button)}>
             <span>{this.props.button.title}</span>
         </div>
     }
